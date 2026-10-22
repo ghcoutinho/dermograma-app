@@ -182,9 +182,8 @@ textarea{resize:vertical; min-height:56px;}
   .footer .inner{max-width:1100px;}
   main{padding-left:16px; padding-right:16px;}
   /* dermograma ao lado do resumo */
-  .derma-card{display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
-    column-gap:18px; align-items:start;}
-  .derma-card .summary{margin-top:0; max-height:70vh; overflow:auto;}
+  .derma-card{display:block;}
+  .derma-card .summary{margin-top:14px; max-height:none; overflow:visible;} .derma-scroll{max-height:82vh;}
   /* ficha da regiao vira painel central com 2 colunas */
   .sheet{left:50%; right:auto; width:min(96vw,980px); max-width:none; bottom:10px;
     border-radius:16px; transform:translate(-50%,120%);}
@@ -957,6 +956,8 @@ document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click"
 document.getElementById("btn-prev").addEventListener("click",function(){if(curTab!=="reg"&&curTab>1)showTab(curTab-1);});
 document.getElementById("btn-next").addEventListener("click",function(){if(curTab==="reg")return;if(curTab<5){showTab(curTab+1);}else{commitAnimal();}});
 function applyZoom(){document.getElementById("derma-svg").style.width=(zoom*100)+"%";document.getElementById("zoom-lbl").textContent="Zoom "+Math.round(zoom*100)+"%";}
+function fitZoom(){zoom=(window.innerWidth>=700)?1:1.8;applyZoom();}
+try{matchMedia("(min-width:700px)").addEventListener("change",fitZoom);}catch(e){}
 document.getElementById("zoom-in").onclick=function(){zoom=Math.min(3.5,zoom+0.25);applyZoom();};
 document.getElementById("zoom-out").onclick=function(){zoom=Math.max(1,zoom-0.25);applyZoom();};
 
@@ -1822,7 +1823,7 @@ document.getElementById("btn-pdf").addEventListener("click",function(){
   toast("PDF com 15 etiquetas de "+id);});
 
 /* ================= init ================= */
-loadDb(); renderUsers(); buildMunList(); buildLocalList(); renderLocais(); buildMaterial(); buildChips(); buildExamGrids(); buildHotspots(); applyZoom(); setDermaImage(); showTab(1); renderDb();
+loadDb(); renderUsers(); buildMunList(); buildLocalList(); renderLocais(); buildMaterial(); buildChips(); buildExamGrids(); buildHotspots(); fitZoom(); setDermaImage(); showTab(1); renderDb();
 (function init(){var raw=null;try{raw=localStorage.getItem(K_CUR);}catch(e){}
   if(raw){try{applyData(JSON.parse(raw));}catch(e){refreshMarkers();refreshSummary();updateId();}}
   else{refreshMarkers();refreshSummary();updateId();}
