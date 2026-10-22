@@ -1,4 +1,4 @@
-# Dermatograma — Canídeos Silvestres - Gustavo Henrique Coutinho
+# Dermograma — Canídeos Silvestres - Gustavo Henrique Coutinho
 
 Aplicativo de campo para a ficha **Dados clínicos e coleta de amostras** do projeto
 *Dermatopatias em Canídeos Silvestres* (Doutorado em Patologia Animal — UFMG).
@@ -9,7 +9,7 @@ nenhum: todos os dados ficam no próprio aparelho.
 ## O que faz
 
 - Ficha completa em 4 etapas: identificação, dados clínicos, material biológico e informações adicionais.
-- **Dermatograma interativo** com as 42 regiões numeradas do lobo-guará; cada região registra
+- **Dermograma interativo** com as 42 regiões numeradas do lobo-guará; cada região registra
   várias lesões, cada uma com intensidade, distribuição e % de acometimento.
 - **Fotos por região**, tiradas na hora ou escolhidas da galeria (redimensionadas automaticamente).
 - **GPS** com preenchimento do município sem internet (base de 316 municípios do ES e divisas).
@@ -21,17 +21,17 @@ nenhum: todos os dados ficam no próprio aparelho.
 
 O GPS só funciona em endereço **HTTPS** — por isso a publicação. São 4 passos:
 
-1. Crie um repositório **público** no GitHub, por exemplo `dermatograma-app`.
+1. Crie um repositório **público** no GitHub, por exemplo `dermograma-app`.
 2. Envie o conteúdo desta pasta:
    ```bash
-   git remote add origin https://github.com/SEU-USUARIO/dermatograma-app.git
+   git remote add origin https://github.com/SEU-USUARIO/dermograma-app.git
    git branch -M main
    git push -u origin main
    ```
    *(ou use "Add file → Upload files" no site do GitHub e arraste todos os arquivos)*
 3. No repositório: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save**.
 4. Em cerca de um minuto o link fica no ar:
-   `https://SEU-USUARIO.github.io/dermatograma-app/`
+   `https://SEU-USUARIO.github.io/dermograma-app/`
 
 ## Como instalar no celular
 

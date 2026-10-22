@@ -1,6 +1,6 @@
 {
-  "name": "Dermatograma — Canídeos Silvestres",
-  "short_name": "Dermatograma",
+  "name": "Dermograma — Canídeos Silvestres",
+  "short_name": "Dermograma",
   "description": "Ficha de dermatopatias em canídeos silvestres — UFMG",
   "start_url": "./",
   "scope": "./",
